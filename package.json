@@ -1,5 +1,5 @@
 {
-  "name": "Avtoizpit Scraper",
+  "name": "avtoizpit-scraper",
   "version": "0.1.0",
   "description": "Scrapes questions/answers for the bulgarian driving test from avtoizpit.com",
   "main": "scraper.js",
