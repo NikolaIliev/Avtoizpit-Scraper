@@ -1,0 +1,82 @@
+<link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    .true {
+        background-color: #01cf4a !important;
+        border-color: #01cf4a !important;
+    }
+
+    .question {
+        position: relative;
+        background-color: #f7f7f9;
+        border: 1px solid #e1e1e8;
+        border-radius: 2px;
+        border-bottom: none;
+        text-align: center;
+        font-weight: bold;
+        font-size: 18px;
+        padding: 15px 0;
+    }
+
+    .true-answers-count {
+        position: absolute;
+        top: -5px;
+        left: 1px;
+        font-size: 26px;
+        opacity: 0.6;
+        color: #01cf4a;
+    }
+
+    .question-wrapper:hover .question,
+    .question-wrapper:hover .answers{
+        cursor: pointer;
+        background-color: rgba(86,61,124,.09); 
+    }
+
+    .answers {
+        background-color: #f7f7f9;
+        border: 1px solid #e1e1e8;
+        border-radius: 2px;
+        border-top: none;
+        margin-bottom: 50px;
+        padding: 20px 0px;
+    }
+
+    .answers .answer {
+        vertical-align: middle;
+        text-align: center;
+        padding: 10px;
+        border: 1px solid #e1e1e8;
+        background-color: rgba(86,61,124,.09);
+        border-radius: 12px;
+    }
+</style>
+
+<script id="table-template" type="text/x-handlebars-template">
+    <div class='container'>
+        {{#each data}}
+            <div class='question-wrapper'>
+                <div class='row question'>
+                    <div class='true-answers-count'>{{this.trueAnswersCount}}</div>
+                    {{#if this.hasPicture}}
+                        <div class='row'><img src="./pictures/{{this.pictureOId}}.{{this.format}}"></div>
+                    {{/if}}
+                    {{ this.text }}
+                </div>
+                <div class='row answers'>           
+                    {{#each this.answers}}
+                        <div class="col-md-{{this.md}}">
+                            <div class="answer" istrue="{{this.isTrue}}">
+                                {{#if this.hasPicture}}
+                                    <img src="./pictures/{{this.pictureOId}}.{{this.format}}">
+                                {{/if}}
+                                {{ this.text }}
+                            </div>
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+        {{/each}}
+    </div>
+    <button type="button" class="btn btn-info" id="next-button">Get next 100 questions</button>
+</script>
+<script data-main="scripts/app" src="bower_components/requirejs/require.js"></script>

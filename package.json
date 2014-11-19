@@ -1,0 +1,21 @@
+{
+  "name": "Avtoizpit Scraper",
+  "version": "0.1.0",
+  "description": "Scrapes questions/answers for the bulgarian driving test from avtoizpit.com",
+  "main": "scraper.js",
+  "dependencies": {
+    "express": "~4.10.2",
+    "mongodb": "~1.4.20",
+    "q": "~1.1.1",
+    "request": "~2.48.0",
+    "async": "~0.9.0"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "listovki",
+    "scraper",
+    "avtoizpit"
+  ],
+  "author": "Nikola Iliev",
+  "license": "MIT"
+}
